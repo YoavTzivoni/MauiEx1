@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiEx1.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <VerticalStackLayout>
+        <Button
+            x:Name="btnUp"
+            Clicked="btnUp_Clicked"
+            FontFamily="MaterialSymbolsRounded"
+            FontSize="35"
+            HorizontalOptions="Center"
+            Text="&#xe5d8;" />
+        <Image
+            x:Name="img"
+            Margin="10"
+            HeightRequest="150"
+            Source="dotnet_bot.png" />
+        <Button
+            x:Name="btnDown"
+            Clicked="btnDown_Clicked"
+            FontFamily="MaterialSymbolsRounded"
+            FontSize="35"
+            HorizontalOptions="Center"
+            Text="&#xe5db;" />
+        <Button
+            Margin="10"
+            Clicked="NavigateDynamic"
+            Text="Show Dynamic" />
+    </VerticalStackLayout>
+
+</ContentPage>
