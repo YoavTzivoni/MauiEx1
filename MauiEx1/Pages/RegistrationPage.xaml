@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiEx1.Pages.RegistrationPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:MauiEx1.Models"
+    Title="Registeration"
+    x:DataType="models:User">
+    <VerticalStackLayout Padding="10">
+        <Image
+            Aspect="AspectFit"
+            HeightRequest="185"
+            SemanticProperties.Description="dot net bot in a race car number eight"
+            Source="register.jpg" />
+
+        <Grid
+            Padding="10"
+            ColumnDefinitions="2*,3*,30"
+            ColumnSpacing="5"
+            RowDefinitions="auto,auto,auto,auto,auto,auto,auto,auto,auto"
+            RowSpacing="10">
+            <!--  first row  -->
+            <Label Text="Name" VerticalOptions="Center" />
+            <Entry
+                x:Name="TxtName"
+                Grid.Column="1"
+                Placeholder="name"
+                Text="{Binding Name}"
+                TextColor="Red">
+                <Entry.Triggers>
+                    <DataTrigger
+                        Binding="{Binding IsNameValid, Mode=TwoWay}"
+                        TargetType="Entry"
+                        Value="True">
+                        <Setter Property="TextColor" Value="Green" />
+                        <Setter Property="BackgroundColor" Value="Bisque" />
+                    </DataTrigger>
+                </Entry.Triggers>
+            </Entry>
+            <Label
+                Grid.Column="2"
+                FontFamily="MaterialSymbolsRounded"
+                FontSize="25"
+                Text="{Binding NameValidationIcon}"
+                TextColor="{Binding NameValidationIconColor}"
+                VerticalOptions="Center" />
+            <!--  second row  -->
+            <Label
+                Grid.Row="1"
+                Text="User Name"
+                VerticalOptions="Center" />
+            <Entry
+                Grid.Row="1"
+                Grid.Column="1"
+                Placeholder="user name"
+                Text="{Binding UserName}"
+                TextColor="Red">
+                <Entry.Triggers>
+                    <DataTrigger
+                        Binding="{Binding IsUserNameValid, Mode=TwoWay}"
+                        TargetType="Entry"
+                        Value="True">
+                        <Setter Property="TextColor" Value="Green" />
+                        <Setter Property="BackgroundColor" Value="Bisque" />
+                    </DataTrigger>
+                </Entry.Triggers>
+            </Entry>
+            <Label
+                Grid.Row="1"
+                Grid.Column="2"
+                FontFamily="MaterialSymbolsRounded"
+                FontSize="25"
+                Text="{Binding UserNameValidationIcon}"
+                TextColor="{Binding UserNameValidationIconColor}"
+                VerticalOptions="Center" />
+            <!--
+                Text="&#xe5db;"
+                Text="&#xe876;"
+            -->
+
+            <!--  third row  -->
+            <Label
+                Grid.Row="2"
+                Text="Address"
+                VerticalOptions="Center" />
+            <Entry
+                Grid.Row="2"
+                Grid.Column="1"
+                Placeholder="Address"
+                Text="{Binding Address}" />
+            <Label
+                Grid.Row="2"
+                Grid.Column="2"
+                FontFamily="MaterialSymbolsRounded"
+                FontSize="25"
+                Text="{Binding AddressValidationIcon}"
+                TextColor="{Binding AddressValidationIconColor}"
+                VerticalOptions="Center" />
+            <!--  fourth row  -->
+            <Label
+                Grid.Row="3"
+                Text="Email"
+                VerticalOptions="Center" />
+            <Entry
+                Grid.Row="3"
+                Grid.Column="1"
+                Keyboard="Email"
+                Placeholder="Email"
+                Text="{Binding Email}" />
+            <Label
+                Grid.Row="3"
+                Grid.Column="2"
+                FontFamily="MaterialSymbolsRounded"
+                FontSize="25"
+                Text="{Binding EmailValidationIcon}"
+                TextColor="{Binding EmailValidationIconColor}"
+                VerticalOptions="Center" />
+            <!--  fifth row  -->
+            <Label
+                Grid.Row="4"
+                Text="Date Of Birth"
+                VerticalOptions="Center" />
+            <DatePicker
+                Grid.Row="4"
+                Grid.Column="1"
+                Date="{Binding DateOfBirth}" />
+            <Label
+                Grid.Row="4"
+                Grid.Column="2"
+                FontFamily="MaterialSymbolsRounded"
+                FontSize="25"
+                Text="{Binding DateOfBirthValidationIcon}"
+                TextColor="{Binding DateOfBirthValidationIconColor}"
+                VerticalOptions="Center" />
+            <!--  sixth row  -->
+            <Label
+                Grid.Row="5"
+                Text="Password"
+                VerticalOptions="Center" />
+            <Entry
+                Grid.Row="5"
+                Grid.Column="1"
+                IsPassword="True"
+                Placeholder="Password"
+                Text="{Binding Password}" />
+            <Label
+                Grid.Row="5"
+                Grid.Column="2"
+                FontFamily="MaterialSymbolsRounded"
+                FontSize="25"
+                Text="{Binding PasswordValidationIcon}"
+                TextColor="{Binding PasswordValidationIconColor}"
+                VerticalOptions="Center" />
+            <!--  seventh row  -->
+            <Label
+                Grid.Row="6"
+                Text="Age"
+                VerticalOptions="Center" />
+            <Label
+                Grid.Row="6"
+                Grid.Column="1"
+                Text="{Binding Age}"
+                VerticalOptions="Center" />
+            <!--  eighth row  -->
+            <Button
+                Grid.Row="7"
+                Text="Cancel"
+                VerticalOptions="Center" />
+            <Border
+                Grid.Row="7"
+                Grid.Column="1"
+                Padding="16,8"
+                Background="#2B0B98"
+                HorizontalOptions="Center"
+                Stroke="#C49B33"
+                StrokeShape="RoundRectangle 40,0,0,40"
+                StrokeThickness="4">
+                <Button
+                    Background="#2B0B98"
+                    Clicked="Button_Clicked"
+                    Text="Register"
+                    VerticalOptions="Center" />
+            </Border>
+        </Grid>
+    </VerticalStackLayout>
+
+</ContentPage>

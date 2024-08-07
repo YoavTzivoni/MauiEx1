@@ -1,3 +1,5 @@
+//using Bumptech.Glide.Load.Resource.Gif;
+
 namespace MauiEx1;
 
 public partial class DynamicPage : ContentPage
@@ -41,10 +43,19 @@ public partial class DynamicPage : ContentPage
 					FontSize = 35.0,
 					HorizontalOptions = LayoutOptions.Center,
 					Text = IconFont.Arrow_downward
+				},
+
+				new Button()
+				{
+					FontFamily = "MaterialSymbolsRounded",
+					FontSize = 35.0,
+					HorizontalOptions = LayoutOptions.Center,
+					Text = "Back",
+					Margin= 10
 				}
 			}
 		};
-
+		
 		VerticalStackLayout v  =  Content as VerticalStackLayout;
 		Button btnUp = (Button)v.Children[0];
 		img = (Image)v.Children[1];
@@ -60,6 +71,12 @@ public partial class DynamicPage : ContentPage
 			if (index == 3) index = -1;
 			index++;
 			ShowImage();
+		};
+		Button btnBack = (Button)v.Children[3];
+		btnBack.Clicked += (s, e) =>
+		{
+			btnBack.Text = "..";
+			Shell.Current.GoToAsync("..");
 		};
 	}
 

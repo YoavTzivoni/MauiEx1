@@ -2,7 +2,8 @@
 <ContentPage
     x:Class="MauiEx1.MainPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding index}">
 
     <VerticalStackLayout>
         <Button
@@ -28,6 +29,21 @@
             Margin="10"
             Clicked="NavigateDynamic"
             Text="Show Dynamic" />
+        <Slider
+            Margin="30"
+            Maximum="3"
+            MaximumTrackColor="#F01616"
+            Minimum="0"
+            MinimumTrackColor="#78EE10"
+            Value="{Binding SliderIndex, Mode=TwoWay}" />
+        <Button
+            Margin="10"
+            Clicked="SendSmsClicked"
+            Text="Send SMS" />
+        <Button
+            Margin="10"
+            Clicked="NavigateRegistration"
+            Text="Registration" />
     </VerticalStackLayout>
 
 </ContentPage>
