@@ -1,4 +1,5 @@
 using MauiEx1.Models;
+using MauiEx1.ViewModels;
 
 namespace MauiEx1.Pages;
 
@@ -9,7 +10,7 @@ public partial class RegistrationPage : ContentPage
 	{
 		InitializeComponent();
 		LoadUser();
-		BindingContext = user;
+		BindingContext = new RegistrationViewModel();
 	}
 
 	public User User { get { return user; } }

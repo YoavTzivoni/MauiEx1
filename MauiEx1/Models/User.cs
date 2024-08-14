@@ -77,7 +77,7 @@ namespace MauiEx1.Models
 			set { password = value; OnPropertyChanged(); OnPropertyChanged(nameof(PasswordValidationIcon)); OnPropertyChanged(nameof(PasswordValidationIconColor)); }
 		}
 		public bool IsPasswordValid { get { return password.Length > 5 && password.Any(char.IsNumber) && password.Any(Char.IsUpper); } }
-		public string PasswordValidationIcon { get { return IsPasswordValid ? "\ue876" : "\ue645"; } }
+		public string PasswordValidationIcon { get { return IsPasswordValid ? IconFont.Done : IconFont.Priority_high; } }
 		public string PasswordValidationIconColor { get { return IsPasswordValid ? "Green" : "Red"; } }
 
 		public int Age
